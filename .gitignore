@@ -1,0 +1,13 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Local sheets or exports we don't want committed
+*.csv
+*.xlsx
+*.xls
