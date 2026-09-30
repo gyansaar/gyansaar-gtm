@@ -57,14 +57,39 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  padding-bottom: 14px;
+  padding-bottom: 18px;
   border-bottom: 1px solid var(--rule);
 }
 
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
 .logo {
-  height: 44px;
-  width: auto;
+  height: 78px;
+  width: 78px;
   display: block;
+  object-fit: contain;
+}
+
+.wordmark {
+  font-family: var(--serif);
+  font-optical-sizing: auto;
+  font-variation-settings: "opsz" 100;
+  font-weight: 600;
+  font-size: 36px;
+  letter-spacing: -0.025em;
+  line-height: 1;
+  color: var(--ink);
+}
+
+.wordmark span {
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .masthead-meta {
@@ -467,7 +492,9 @@ body {
     padding: 16mm 12mm 20mm;
     min-height: 0;
   }
-  .logo { height: 34px; }
+  .logo { height: 56px; width: 56px; }
+  .wordmark { font-size: 26px; }
+  .brand { gap: 12px; }
   .hero { margin-top: 30px; }
   .hero-title { font-size: 34px; max-width: none; }
   .hero-sub { font-size: 14px; }
@@ -532,7 +559,10 @@ body {
 
 <div class="page">
   <div class="masthead">
-    <img class="logo" src="logo.png" alt="GyanSaar">
+    <div class="brand">
+      <img class="logo" src="logo.png" alt="GyanSaar">
+      <div class="wordmark">Gyan<span>Saar</span></div>
+    </div>
     <div class="masthead-meta">
       For <strong>coaching centres</strong><br>
       Entrance exams · Delhi NCR
@@ -597,7 +627,10 @@ body {
 
 <div class="page">
   <div class="masthead">
-    <img class="logo" src="logo.png" alt="GyanSaar">
+    <div class="brand">
+      <img class="logo" src="logo.png" alt="GyanSaar">
+      <div class="wordmark">Gyan<span>Saar</span></div>
+    </div>
     <div class="masthead-meta">
       Benefits · guardrails · contact
     </div>
