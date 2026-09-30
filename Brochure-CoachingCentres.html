@@ -1,0 +1,619 @@
+<title>Coaching Centres Brochure</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600;700&display=swap">
+<style>
+/* Two-page A4 print brochure — warm-paper ground, editorial serif display, humanist sans body */
+:root {
+  --paper: #F7F2E7;
+  --paper-tint: #EFE9D9;
+  --ink: #1A1712;
+  --ink-body: #3D362C;
+  --ink-mute: #6A5F4E;
+  --seal: #A03826;
+  --seal-soft: #C46B58;
+  --rule: #D7CBAF;
+  --rule-soft: #E4D9BF;
+
+  --serif: 'Fraunces', 'Iowan Old Style', 'Georgia', serif;
+  --sans: 'Source Sans 3', 'Inter', system-ui, sans-serif;
+
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: #2A2620;
+  margin: 0;
+  padding: 32px 16px;
+  font-family: var(--sans);
+  color: var(--ink-body);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  width: 210mm;
+  max-width: 100%;
+  min-height: 297mm;
+  margin: 0 auto 28px;
+  background: var(--paper);
+  color: var(--ink-body);
+  padding: 22mm 20mm;
+  box-shadow: 0 24px 60px -20px rgba(0,0,0,0.5), 0 6px 18px -8px rgba(0,0,0,0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(1200px 400px at 20% -10%, rgba(160,56,38,0.045), transparent 60%),
+    radial-gradient(900px 300px at 110% 110%, rgba(160,56,38,0.03), transparent 60%);
+  pointer-events: none;
+}
+
+.page > * { position: relative; }
+
+/* ---------- Masthead ---------- */
+
+.masthead {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.wordmark {
+  font-family: var(--serif);
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: 42px;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--ink);
+  font-variation-settings: "opsz" 100;
+}
+
+.wordmark .dot {
+  color: var(--seal);
+}
+
+.masthead-meta {
+  font-family: var(--sans);
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  text-align: right;
+  line-height: 1.6;
+}
+
+.masthead-meta strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  margin-top: 34px;
+}
+
+.hero-eyebrow {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--seal);
+  margin-bottom: 14px;
+}
+
+.hero-title {
+  font-family: var(--serif);
+  font-optical-sizing: auto;
+  font-variation-settings: "opsz" 144;
+  font-weight: 500;
+  font-size: 44px;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0 0 18px;
+  text-wrap: balance;
+  max-width: 30ch;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: var(--seal);
+}
+
+.hero-sub {
+  font-family: var(--sans);
+  font-size: 15px;
+  color: var(--ink-mute);
+  max-width: 62ch;
+  margin: 0;
+}
+
+/* ---------- Sections ---------- */
+
+.section {
+  margin-top: 34px;
+}
+
+.section-label {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--seal);
+  padding-bottom: 6px;
+  border-bottom: 1.5px solid var(--seal);
+  margin-bottom: 14px;
+}
+
+.section-heading {
+  font-family: var(--serif);
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.2;
+  color: var(--ink);
+  margin: 0 0 12px;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+.section-body {
+  font-family: var(--sans);
+  font-size: 14px;
+  color: var(--ink-body);
+  max-width: 68ch;
+  line-height: 1.6;
+}
+
+.section-body p + p {
+  margin-top: 10px;
+}
+
+/* ---------- How-it-works steps ---------- */
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px 14px 16px;
+  background: var(--paper-tint);
+  border-radius: 3px;
+  min-width: 0;
+}
+
+.step-num {
+  font-family: var(--serif);
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: 22px;
+  color: var(--seal);
+  font-variation-settings: "opsz" 144;
+  line-height: 1;
+}
+
+.step-title {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.005em;
+}
+
+.step-body {
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--ink-mute);
+  line-height: 1.5;
+}
+
+/* ---------- Benefits three-column ---------- */
+
+.benefits {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 14px;
+}
+
+.benefit-col { min-width: 0; }
+
+.benefit-title {
+  font-family: var(--serif);
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.2;
+  color: var(--ink);
+  margin: 0 0 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--rule);
+  letter-spacing: -0.01em;
+}
+
+.benefit-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.benefit-list li {
+  font-family: var(--sans);
+  font-size: 12.5px;
+  color: var(--ink-body);
+  padding-left: 14px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.benefit-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 5px;
+  height: 5px;
+  background: var(--seal);
+  border-radius: 50%;
+}
+
+.benefit-list li strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* ---------- Guardrails / do-not block ---------- */
+
+.guardrails {
+  margin-top: 32px;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  padding: 20px 22px;
+  background: rgba(160, 56, 38, 0.03);
+}
+
+.guardrails-heading {
+  font-family: var(--serif);
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 20px;
+  color: var(--ink);
+  margin: 0 0 12px;
+  letter-spacing: -0.01em;
+}
+
+.guardrails-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 22px;
+}
+
+.guardrails-list li {
+  font-family: var(--sans);
+  font-size: 12.5px;
+  color: var(--ink-body);
+  padding-left: 22px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.guardrails-list li::before {
+  content: "×";
+  position: absolute;
+  left: 0;
+  top: -2px;
+  color: var(--seal);
+  font-weight: 700;
+  font-size: 18px;
+  font-family: var(--serif);
+  line-height: 1;
+}
+
+/* ---------- Vision pullquote ---------- */
+
+.vision-quote {
+  font-family: var(--serif);
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 19px;
+  line-height: 1.45;
+  color: var(--ink);
+  padding: 10px 0 6px 22px;
+  border-left: 3px solid var(--seal);
+  margin: 12px 0 0;
+  max-width: 62ch;
+  letter-spacing: -0.005em;
+}
+
+/* ---------- Footer / Colophon ---------- */
+
+.colophon {
+  margin-top: 36px;
+  padding-top: 18px;
+  border-top: 1px solid var(--rule);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: end;
+}
+
+.contact-block {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 4px 32px;
+  font-family: var(--sans);
+  font-size: 12.5px;
+  color: var(--ink-body);
+}
+
+.contact-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  grid-row: 1;
+}
+
+.contact-value {
+  color: var(--ink);
+  font-weight: 500;
+  grid-row: 2;
+  user-select: all;
+}
+
+.colophon-signoff {
+  font-family: var(--serif);
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 12.5px;
+  color: var(--ink-mute);
+  text-align: right;
+  letter-spacing: 0.01em;
+}
+
+.page-number {
+  position: absolute;
+  bottom: 10mm;
+  right: 20mm;
+  font-family: var(--sans);
+  font-size: 10px;
+  color: var(--ink-mute);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* ---------- Responsive (screen only) ---------- */
+
+@media (max-width: 720px) {
+  body { padding: 16px 12px; }
+  .page {
+    padding: 14mm 12mm;
+    min-height: 0;
+  }
+  .wordmark { font-size: 32px; }
+  .hero-title { font-size: 30px; }
+  .section-heading { font-size: 20px; }
+  .steps { grid-template-columns: 1fr 1fr; }
+  .benefits { grid-template-columns: 1fr; gap: 18px; }
+  .guardrails-list { grid-template-columns: 1fr; }
+  .colophon {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+  .colophon-signoff { text-align: left; }
+  .contact-block {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .contact-label, .contact-value { grid-row: auto; }
+  .page-number { bottom: 8mm; right: 12mm; }
+}
+
+/* ---------- Print ---------- */
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@media print {
+  body {
+    background: #fff;
+    padding: 0;
+  }
+  .page {
+    box-shadow: none;
+    margin: 0;
+    page-break-after: always;
+    width: 210mm;
+    min-height: 297mm;
+    padding: 22mm 20mm;
+  }
+  .page:last-child { page-break-after: auto; }
+  .page::before { display: none; }
+}
+</style>
+
+<div class="page">
+  <div class="masthead">
+    <div class="wordmark">GyanSaar<span class="dot">.</span></div>
+    <div class="masthead-meta">
+      For <strong>coaching centres</strong><br>
+      Entrance exams · Delhi NCR
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="hero-eyebrow">A classroom instrument</div>
+    <h1 class="hero-title">
+      Every lecture, remembered.<br>
+      Every student, <em>caught up</em>.
+    </h1>
+    <p class="hero-sub">
+      Your top faculty teach as they always do. GyanSaar captures each class with their consent, and turns it into a searchable transcript, a documented lesson record, and a first-draft practice set for students &mdash; before they leave the room.
+    </p>
+  </div>
+
+  <div class="section">
+    <span class="section-label">The idea</span>
+    <h2 class="section-heading">What GyanSaar is</h2>
+    <div class="section-body">
+      <p>
+        Every coaching centre lives or dies on its top faculty. When a star teacher leaves, results dip that year and admissions the next. Meanwhile, students who miss a class have nothing to return to &mdash; no notes, no transcript, no way to catch up before the next one.
+      </p>
+      <p>
+        GyanSaar addresses both, together. Your teacher taps one button in class, teaches as always, and taps stop at the end. What comes out is a transcript of what was said, a lesson record for the institute, and a fresh set of practice questions matched to that specific class. <strong>Nothing is published without the teacher's approval.</strong> Nothing is stored anywhere the teacher cannot delete.
+      </p>
+    </div>
+  </div>
+
+  <div class="section">
+    <span class="section-label">Vision</span>
+    <h2 class="section-heading">Where we're headed</h2>
+    <div class="section-body">
+      <p>
+        Classrooms cannot be replaced. They can be extended &mdash; with the teacher's consent, at the point of teaching, in a form students can return to.
+      </p>
+      <blockquote class="vision-quote">
+        By 2030, every entrance-exam student in India should have a searchable record of every lecture their teacher gave, and every good teacher should own a durable archive of their own work.
+      </blockquote>
+    </div>
+  </div>
+
+  <div class="section">
+    <span class="section-label">How it works</span>
+    <h2 class="section-heading">Four steps, one button</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-title">Teacher taps Start</div>
+        <div class="step-body">Phone can go in the pocket. Class continues, uninterrupted. Recording survives screen lock and calls.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-title">Class ends, tap Stop</div>
+        <div class="step-body">The recording uploads in the background. Works over patchy WiFi &mdash; queued locally if the connection drops.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-title">Three artefacts appear</div>
+        <div class="step-body">A searchable transcript, an institute lesson record, and a first-draft practice set built from what was actually taught.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-title">Teacher approves</div>
+        <div class="step-body">Edit, approve, or discard. Approved material goes to students in one tap. Discards leave no trace.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-number">Page 1 of 2</div>
+</div>
+
+<div class="page">
+  <div class="masthead">
+    <div class="wordmark">GyanSaar<span class="dot">.</span></div>
+    <div class="masthead-meta">
+      Benefits &middot; guardrails &middot; contact
+    </div>
+  </div>
+
+  <div class="section" style="margin-top: 28px;">
+    <span class="section-label">Who benefits</span>
+    <h2 class="section-heading">What each of you gets</h2>
+
+    <div class="benefits">
+      <div class="benefit-col">
+        <h3 class="benefit-title">For the institute</h3>
+        <ul class="benefit-list">
+          <li><strong>Less dependence</strong> on any single star faculty &mdash; the teaching is preserved.</li>
+          <li><strong>Retention improves</strong> when students who miss a class can catch up before the next one.</li>
+          <li><strong>Documented teaching quality</strong> as evidence for parents, and for internal reviews.</li>
+          <li><strong>Faculty admin time drops</strong> &mdash; assignment-setting is drafted from every class.</li>
+          <li><strong>Consistency across batches</strong> &mdash; same material, same standard, same session.</li>
+        </ul>
+      </div>
+
+      <div class="benefit-col">
+        <h3 class="benefit-title">For the teacher</h3>
+        <ul class="benefit-list">
+          <li><strong>One tap.</strong> No new workflow to learn. If they can use WhatsApp, they can use this.</li>
+          <li><strong>Their teaching is preserved</strong> &mdash; their voice, their method, their examples.</li>
+          <li><strong>Thirty minutes saved</strong> per lecture on drafting practice questions.</li>
+          <li><strong>Full control:</strong> approve, edit, or discard &mdash; and discards leave no institutional trace.</li>
+          <li><strong>The teacher owns their tape.</strong> Nothing is shared without their sign-off.</li>
+        </ul>
+      </div>
+
+      <div class="benefit-col">
+        <h3 class="benefit-title">For the student</h3>
+        <ul class="benefit-list">
+          <li><strong>Never miss a class</strong> again &mdash; every lecture becomes searchable text.</li>
+          <li><strong>Practice matched to today</strong> &mdash; questions from the exact class they attended.</li>
+          <li><strong>Revise from source</strong> &mdash; notes, transcript, and practice from one session.</li>
+          <li><strong>Same standard, every batch</strong> &mdash; no gap between "morning batch" and "evening batch".</li>
+          <li><strong>Their voice is not the subject</strong> &mdash; only the teacher's teaching is captured.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="guardrails">
+    <h3 class="guardrails-heading">What GyanSaar deliberately does not do</h3>
+    <ul class="guardrails-list">
+      <li>We do not grade students automatically &mdash; every mark passes through a teacher.</li>
+      <li>We do not surveil teachers &mdash; the institute owner does not see discards.</li>
+      <li>We do not use classroom recordings to train AI models.</li>
+      <li>We do not sell teacher, student, or institution data.</li>
+      <li>We do not replace the classroom &mdash; the teacher remains the source.</li>
+      <li>We do not store raw audio anywhere our staff or yours can read it.</li>
+    </ul>
+  </div>
+
+  <div class="colophon">
+    <div class="contact-block">
+      <div class="contact-label">Speak with</div>
+      <div class="contact-label">Phone</div>
+      <div class="contact-label">Email</div>
+      <div class="contact-value">Deepak Nagpal</div>
+      <div class="contact-value">+91 &nbsp;XXXXX&nbsp;XXXXX</div>
+      <div class="contact-value">contact@gyansaar.com</div>
+    </div>
+    <div class="colophon-signoff">
+      Built in Delhi, for Indian classrooms.
+    </div>
+  </div>
+
+  <div class="page-number">Page 2 of 2</div>
+</div>
