@@ -1,0 +1,743 @@
+<title>Coaching Centres Detailed</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600;700&display=swap">
+<style>
+/* Two-page A4 detailed brochure — same purple design system as Brochure-CoachingCentres, expanded copy */
+:root {
+  --paper: #FFFFFF;
+  --paper-soft: #FBF8FE;
+  --paper-tint: #F4EBF7;
+  --ink: #1F0F2A;
+  --ink-body: #3D3247;
+  --ink-mute: #8D82A0;
+  --brand-deep: #5B1080;
+  --brand-mid: #7B1FA2;
+  --brand-bright: #A83787;
+  --rule: #ECE0F1;
+  --brand-gradient: linear-gradient(90deg, #5B1080 0%, #7B1FA2 45%, #A83787 100%);
+
+  --serif: 'Fraunces', 'Iowan Old Style', 'Georgia', serif;
+  --sans: 'Source Sans 3', 'Inter', system-ui, sans-serif;
+
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: #2A2136;
+  margin: 0;
+  padding: 32px 16px;
+  font-family: var(--sans);
+  color: var(--ink-body);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  width: 210mm;
+  max-width: 100%;
+  min-height: 297mm;
+  margin: 0 auto 28px;
+  background: var(--paper);
+  color: var(--ink-body);
+  padding: 22mm 22mm 20mm;
+  box-shadow: 0 24px 60px -20px rgba(0,0,0,0.55), 0 6px 18px -8px rgba(0,0,0,0.35);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Masthead ---------- */
+
+.masthead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo {
+  height: 62px;
+  width: 62px;
+  display: block;
+  object-fit: contain;
+}
+
+.wordmark {
+  font-family: var(--serif);
+  font-optical-sizing: auto;
+  font-variation-settings: "opsz" 100;
+  font-weight: 600;
+  font-size: 30px;
+  letter-spacing: -0.025em;
+  line-height: 1;
+  color: var(--ink);
+}
+
+.wordmark span {
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.masthead-meta {
+  font-family: var(--sans);
+  font-size: 10.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  text-align: right;
+  line-height: 1.7;
+}
+
+.masthead-meta strong {
+  color: var(--brand-deep);
+  font-weight: 700;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  margin-top: 32px;
+}
+
+.hero-eyebrow {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--brand-bright);
+  margin-bottom: 14px;
+}
+
+.hero-title {
+  font-family: var(--serif);
+  font-optical-sizing: auto;
+  font-variation-settings: "opsz" 144;
+  font-weight: 500;
+  font-size: 42px;
+  line-height: 1.06;
+  letter-spacing: -0.022em;
+  color: var(--ink);
+  margin: 0 0 18px;
+  text-wrap: balance;
+  max-width: 22ch;
+}
+
+.hero-title em {
+  font-style: italic;
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 500;
+}
+
+.hero-sub {
+  font-family: var(--sans);
+  font-size: 14px;
+  color: var(--ink-mute);
+  max-width: 68ch;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ---------- Sections ---------- */
+
+.section {
+  margin-top: 30px;
+}
+
+.section-label {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--brand-deep);
+  padding-top: 4px;
+  border-top: 2px solid var(--brand-deep);
+  margin-bottom: 12px;
+}
+
+.section-heading {
+  font-family: var(--serif);
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 1.2;
+  color: var(--ink);
+  margin: 0 0 12px;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+.section-body {
+  font-family: var(--sans);
+  font-size: 13.5px;
+  color: var(--ink-body);
+  max-width: 72ch;
+  line-height: 1.6;
+}
+
+.section-body p {
+  margin: 0 0 10px;
+}
+
+.section-body p:last-child {
+  margin-bottom: 0;
+}
+
+.section-body strong {
+  color: var(--brand-deep);
+  font-weight: 600;
+}
+
+/* ---------- Vision quote block ---------- */
+
+.vision-quote {
+  margin: 14px 0 0;
+  padding: 18px 22px;
+  background: var(--paper-soft);
+  border-left: 4px solid transparent;
+  border-image: var(--brand-gradient) 1;
+  border-left-width: 4px;
+  border-left-style: solid;
+  font-family: var(--serif);
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 17px;
+  line-height: 1.4;
+  color: var(--ink);
+  max-width: 60ch;
+  letter-spacing: -0.005em;
+  text-wrap: pretty;
+}
+
+/* ---------- Steps ---------- */
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.step-num {
+  font-family: var(--serif);
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 1;
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-variation-settings: "opsz" 144;
+  letter-spacing: -0.02em;
+  margin-bottom: 2px;
+}
+
+.step-title {
+  font-family: var(--serif);
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  margin-bottom: 2px;
+}
+
+.step-body {
+  font-family: var(--sans);
+  font-size: 11.5px;
+  color: var(--ink-mute);
+  line-height: 1.5;
+}
+
+/* ---------- Page 2 ---------- */
+
+.benefits {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 14px;
+}
+
+.benefit-col { min-width: 0; }
+
+.benefit-eyebrow {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--brand-bright);
+  margin-bottom: 6px;
+}
+
+.benefit-title {
+  font-family: var(--serif);
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.15;
+  color: var(--ink);
+  margin: 0 0 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--rule);
+  letter-spacing: -0.015em;
+}
+
+.benefit-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.benefit-list li {
+  font-family: var(--sans);
+  font-size: 12.5px;
+  color: var(--ink-body);
+  padding-left: 14px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.benefit-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 5px;
+  height: 5px;
+  background: var(--brand-gradient);
+  border-radius: 50%;
+}
+
+.benefit-list li strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* ---------- Guardrails ---------- */
+
+.guardrails {
+  margin-top: 30px;
+  padding: 22px 26px 24px;
+  background: var(--paper-tint);
+  border-radius: 4px;
+}
+
+.guardrails-heading {
+  font-family: var(--serif);
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 19px;
+  color: var(--ink);
+  margin: 0 0 14px;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+.guardrails-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 28px;
+}
+
+.guardrails-list li {
+  font-family: var(--sans);
+  font-size: 12.5px;
+  color: var(--ink);
+  padding-left: 22px;
+  position: relative;
+  line-height: 1.45;
+  font-weight: 500;
+}
+
+.guardrails-list li::before {
+  content: "×";
+  position: absolute;
+  left: 0;
+  top: -3px;
+  color: var(--brand-bright);
+  font-weight: 500;
+  font-size: 20px;
+  font-family: var(--serif);
+  line-height: 1;
+}
+
+/* ---------- About block ---------- */
+
+.about {
+  margin-top: 26px;
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.about-body {
+  font-family: var(--sans);
+  font-size: 13px;
+  color: var(--ink-body);
+  line-height: 1.6;
+  max-width: 68ch;
+}
+
+.about-body p {
+  margin: 0 0 8px;
+}
+
+.about-body p:last-child {
+  margin-bottom: 0;
+}
+
+.about-body strong {
+  color: var(--brand-deep);
+  font-weight: 600;
+}
+
+/* ---------- Colophon ---------- */
+
+.colophon {
+  margin-top: auto;
+  padding-top: 22px;
+  border-top: 1px solid var(--rule);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 28px;
+  align-items: end;
+}
+
+.contact-block {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 4px 32px;
+  font-family: var(--sans);
+}
+
+.contact-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  grid-row: 1;
+}
+
+.contact-value {
+  color: var(--ink);
+  font-weight: 500;
+  font-size: 13px;
+  grid-row: 2;
+  user-select: all;
+}
+
+.colophon-signoff {
+  font-family: var(--serif);
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 12.5px;
+  color: var(--brand-deep);
+  text-align: right;
+  letter-spacing: 0.005em;
+}
+
+.page-number {
+  position: absolute;
+  bottom: 10mm;
+  right: 22mm;
+  font-family: var(--sans);
+  font-size: 10px;
+  color: var(--ink-mute);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.page-flourish {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--brand-gradient);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 720px) {
+  body { padding: 16px 12px; }
+  .page {
+    padding: 16mm 12mm 20mm;
+    min-height: 0;
+  }
+  .logo { height: 46px; width: 46px; }
+  .wordmark { font-size: 22px; }
+  .brand { gap: 10px; }
+  .hero { margin-top: 24px; }
+  .hero-title { font-size: 30px; max-width: none; }
+  .hero-sub { font-size: 13.5px; }
+  .section { margin-top: 26px; }
+  .section-heading { font-size: 19px; }
+  .vision-quote { font-size: 15.5px; padding: 16px 18px; }
+  .steps { grid-template-columns: 1fr 1fr; gap: 18px; }
+  .step-num { font-size: 28px; }
+  .benefits { grid-template-columns: 1fr; gap: 20px; }
+  .guardrails {
+    padding: 18px 18px;
+    margin-top: 24px;
+  }
+  .guardrails-list { grid-template-columns: 1fr; gap: 8px; }
+  .about {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 22px;
+  }
+  .colophon {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 16px;
+  }
+  .colophon-signoff { text-align: left; }
+  .contact-block {
+    grid-template-columns: 1fr;
+    gap: 10px 0;
+  }
+  .contact-label, .contact-value { grid-row: auto; }
+  .page-number { bottom: 8mm; right: 14mm; }
+}
+
+/* ---------- Print ---------- */
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@media print {
+  body {
+    background: #fff;
+    padding: 0;
+  }
+  .page {
+    box-shadow: none;
+    margin: 0;
+    page-break-after: always;
+    width: 210mm;
+    min-height: 297mm;
+    padding: 22mm 22mm 20mm;
+  }
+  .page:last-child { page-break-after: auto; }
+}
+</style>
+
+<div class="page">
+  <div class="masthead">
+    <div class="brand">
+      <img class="logo" src="logo.png" alt="GyanSaar">
+      <div class="wordmark">Gyan<span>Saar</span></div>
+    </div>
+    <div class="masthead-meta">
+      For <strong>coaching centres</strong><br>
+      Entrance exams · Delhi NCR
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="hero-eyebrow">A classroom instrument</div>
+    <h1 class="hero-title">
+      Every lecture, remembered.<br>
+      Every student, <em>caught up.</em>
+    </h1>
+    <p class="hero-sub">
+      Your top faculty teach as they always do. GyanSaar captures each class with their consent, and turns it into a searchable transcript, a documented lesson record, and a first-draft practice set for students &mdash; before they leave the room.
+    </p>
+  </div>
+
+  <div class="section">
+    <span class="section-label">The idea</span>
+    <h2 class="section-heading">What GyanSaar is</h2>
+    <div class="section-body">
+      <p>
+        Every coaching centre lives or dies on its top faculty. When a star teacher leaves, results dip that year and admissions the next. Meanwhile, students who miss a class have nothing to return to &mdash; no notes, no transcript, no way to catch up before the next one.
+      </p>
+      <p>
+        GyanSaar addresses both, together. Your teacher taps one button in class, teaches as always, and taps stop at the end. What comes out is a transcript of what was said, a lesson record for the institute, and a fresh set of practice questions matched to that specific class.
+      </p>
+      <p>
+        <strong>Nothing is published without the teacher's approval.</strong> Nothing is stored anywhere the teacher cannot delete. And nothing about the recording process interrupts the teaching itself.
+      </p>
+    </div>
+  </div>
+
+  <div class="section">
+    <span class="section-label">Vision</span>
+    <h2 class="section-heading">Where we're headed</h2>
+    <div class="section-body">
+      <p>
+        Classrooms cannot be replaced. They can be extended &mdash; with the teacher's consent, at the point of teaching, in a form students can return to. When the physical class ends, the teaching should not end with it.
+      </p>
+      <blockquote class="vision-quote">
+        By 2030, every entrance-exam student in India should have a searchable record of every lecture their teacher gave, and every good teacher should own a durable archive of their own work.
+      </blockquote>
+    </div>
+  </div>
+
+  <div class="section">
+    <span class="section-label">How it works</span>
+    <h2 class="section-heading">Four steps, one button</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-title">Start</div>
+        <div class="step-body">Teacher taps record. Recording survives screen lock, backgrounding, and phone calls. Phone can go in the pocket; class continues.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-title">Stop</div>
+        <div class="step-body">Class ends, teacher taps stop. Upload happens in the background over WiFi or mobile data; queued locally if the connection drops.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-title">Draft</div>
+        <div class="step-body">Minutes later, three artefacts appear: a searchable transcript, a lesson record for the institute, and a first-draft practice set from that class.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-title">Approve</div>
+        <div class="step-body">Teacher edits, approves, or discards each artefact. Approved material reaches students in one tap. Discards leave no trace.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-flourish"></div>
+  <div class="page-number">01 &nbsp;/&nbsp; 02</div>
+</div>
+
+<div class="page">
+  <div class="masthead">
+    <div class="brand">
+      <img class="logo" src="logo.png" alt="GyanSaar">
+      <div class="wordmark">Gyan<span>Saar</span></div>
+    </div>
+    <div class="masthead-meta">
+      Benefits · guardrails · about · contact
+    </div>
+  </div>
+
+  <div class="section">
+    <span class="section-label">Who benefits</span>
+    <h2 class="section-heading">What each of you gets</h2>
+
+    <div class="benefits">
+      <div class="benefit-col">
+        <div class="benefit-eyebrow">For the institute</div>
+        <h3 class="benefit-title">Less dependence, better retention.</h3>
+        <ul class="benefit-list">
+          <li><strong>Star faculty risk drops</strong> &mdash; the teaching is preserved, not just the teacher.</li>
+          <li><strong>Missed classes stop hurting.</strong> Students catch up before the next one.</li>
+          <li><strong>Documented teaching quality</strong> for parents, internal reviews, and NAAC.</li>
+          <li><strong>Faculty admin time drops</strong> as practice sets draft themselves.</li>
+          <li><strong>Consistency across batches</strong> &mdash; same material, same standard, same session.</li>
+        </ul>
+      </div>
+
+      <div class="benefit-col">
+        <div class="benefit-eyebrow">For the teacher</div>
+        <h3 class="benefit-title">One tap. Total control.</h3>
+        <ul class="benefit-list">
+          <li><strong>No new workflow</strong> to learn &mdash; if they use WhatsApp, they use this.</li>
+          <li><strong>Their teaching is preserved</strong> &mdash; their voice, method, and examples.</li>
+          <li><strong>Thirty minutes saved</strong> per lecture on drafting practice questions.</li>
+          <li><strong>Full control:</strong> approve, edit, or discard, with no institutional trace.</li>
+          <li><strong>Discards never count against them</strong> in any metric or review.</li>
+        </ul>
+      </div>
+
+      <div class="benefit-col">
+        <div class="benefit-eyebrow">For the student</div>
+        <h3 class="benefit-title">Never miss a class again.</h3>
+        <ul class="benefit-list">
+          <li><strong>Every class is searchable</strong> &mdash; text they can go back to any time.</li>
+          <li><strong>Practice matched to today.</strong> Questions from the exact class they attended.</li>
+          <li><strong>Revise from source</strong> &mdash; notes, transcript, practice from one session.</li>
+          <li><strong>Same standard, every batch</strong> &mdash; morning or evening, same material.</li>
+          <li><strong>Their voice is not the subject</strong> &mdash; only the teacher's teaching is captured.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="guardrails">
+    <h3 class="guardrails-heading">What GyanSaar deliberately does not do</h3>
+    <ul class="guardrails-list">
+      <li>Grade students automatically &mdash; every mark passes through a teacher</li>
+      <li>Surveil teachers &mdash; the institute owner does not see discards</li>
+      <li>Use classroom recordings to train AI models</li>
+      <li>Sell teacher, student, or institution data &mdash; to anyone, ever</li>
+      <li>Replace the classroom &mdash; the teacher remains the source</li>
+      <li>Store raw audio anywhere our staff or yours can read it</li>
+    </ul>
+  </div>
+
+  <div class="about">
+    <div class="section-label" style="margin-bottom: 0;">About us</div>
+    <div class="about-body">
+      <p>
+        GyanSaar is built in Delhi by a small team of engineers and educators who spent time inside real coaching centres and colleges before writing a line of code. Our design is <strong>consent-first</strong>: teachers own their recordings, students are never the subject, and the raw audio is inaccessible to anyone but the automated system.
+      </p>
+      <p>
+        We do not take advertising, we do not resell data, and we are not part of any of the well-known online-tutoring platforms. Our first cohort of institutional partners is being onboarded across NCR this quarter.
+      </p>
+    </div>
+  </div>
+
+  <div class="colophon">
+    <div class="contact-block">
+      <div class="contact-label">Speak with</div>
+      <div class="contact-label">Phone</div>
+      <div class="contact-label">Email</div>
+      <div class="contact-value">Deepak Nagpal</div>
+      <div class="contact-value">+91&nbsp;XXXXX&nbsp;XXXXX</div>
+      <div class="contact-value">contact@gyansaar.com</div>
+    </div>
+    <div class="colophon-signoff">
+      Built in Delhi,<br>for Indian classrooms.
+    </div>
+  </div>
+
+  <div class="page-flourish"></div>
+  <div class="page-number">02 &nbsp;/&nbsp; 02</div>
+</div>
