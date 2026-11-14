@@ -1,0 +1,574 @@
+<title>GyanSaar B2B Pricing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600;700&display=swap">
+<style>
+:root {
+  --paper: #FFFFFF;
+  --paper-soft: #FBF8FE;
+  --paper-tint: #F4EBF7;
+  --paper-mute: #F7F3F9;
+  --ink: #1F0F2A;
+  --ink-body: #3D3247;
+  --ink-mute: #8D82A0;
+  --brand-deep: #5B1080;
+  --brand-mid: #7B1FA2;
+  --brand-bright: #A83787;
+  --rule: #ECE0F1;
+  --brand-gradient: linear-gradient(90deg, #5B1080 0%, #7B1FA2 45%, #A83787 100%);
+
+  --serif: 'Fraunces', 'Iowan Old Style', 'Georgia', serif;
+  --sans: 'Source Sans 3', 'Inter', system-ui, sans-serif;
+
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: #2A2136;
+  margin: 0;
+  padding: 32px 16px;
+  font-family: var(--sans);
+  color: var(--ink-body);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  width: 210mm;
+  max-width: 100%;
+  min-height: 297mm;
+  margin: 0 auto 28px;
+  background: var(--paper);
+  color: var(--ink-body);
+  padding: 18mm 20mm 16mm;
+  box-shadow: 0 24px 60px -20px rgba(0,0,0,0.55), 0 6px 18px -8px rgba(0,0,0,0.35);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Masthead ---------- */
+
+.masthead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  display: block;
+}
+
+.brand-name {
+  font-family: var(--serif);
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  line-height: 1;
+}
+
+.brand-name span {
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.masthead-meta {
+  font-family: var(--sans);
+  font-size: 10px;
+  color: var(--ink-mute);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-align: right;
+}
+
+/* ---------- Title ---------- */
+
+.doc-title {
+  font-family: var(--serif);
+  font-optical-sizing: auto;
+  font-variation-settings: "opsz" 144;
+  font-weight: 500;
+  font-size: 30px;
+  color: var(--ink);
+  text-align: center;
+  margin: 24px 0 4px;
+  letter-spacing: -0.02em;
+}
+
+.doc-subtitle {
+  font-family: var(--sans);
+  font-size: 13px;
+  color: var(--ink-mute);
+  text-align: center;
+  margin: 0 0 26px;
+}
+
+/* ---------- Section ---------- */
+
+.section {
+  margin-bottom: 22px;
+}
+
+.section-head {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--brand-deep);
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--rule);
+  margin: 0 0 12px;
+  letter-spacing: 0.02em;
+}
+
+.section-body {
+  font-family: var(--sans);
+  font-size: 12.5px;
+  color: var(--ink-body);
+  line-height: 1.6;
+  margin: 0 0 10px;
+  max-width: 72ch;
+}
+
+.bullet-list {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.bullet-list li {
+  font-family: var(--sans);
+  font-size: 12.5px;
+  color: var(--ink-body);
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.bullet-list li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 8px;
+  width: 5px;
+  height: 5px;
+  background: var(--brand-bright);
+  border-radius: 50%;
+}
+
+.bullet-list li strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+/* ---------- Pricing blocks ---------- */
+
+.price-block {
+  margin-bottom: 18px;
+}
+
+.price-sub-head {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--ink);
+  margin: 0 0 8px;
+}
+
+.price-table {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.price-cell {
+  padding: 12px 16px 14px;
+  font-family: var(--sans);
+  font-size: 12.5px;
+  color: var(--ink-body);
+  line-height: 1.55;
+}
+
+.price-cell-head {
+  font-weight: 700;
+  font-size: 11px;
+  color: var(--ink-mute);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding-top: 14px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.price-cell-price {
+  border-bottom: 1px solid var(--rule);
+}
+
+.price-value {
+  font-family: var(--serif);
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 26px;
+  color: var(--ink);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.price-unit {
+  font-family: var(--sans);
+  font-size: 11px;
+  color: var(--ink-mute);
+  margin-top: 4px;
+}
+
+.price-cell-notes {
+  border-bottom: 1px solid var(--rule);
+}
+
+/* ---------- Plans grid ---------- */
+
+.plans {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.plan-card {
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 16px 14px;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 160px;
+}
+
+.plan-card.highlight {
+  border-color: var(--brand-bright);
+  background: var(--paper-soft);
+}
+
+.plan-eyebrow {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--brand-bright);
+  letter-spacing: 0.14em;
+  margin-bottom: 4px;
+}
+
+.plan-name {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--ink);
+  margin: 0 0 10px;
+  letter-spacing: -0.015em;
+}
+
+.plan-cap {
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--ink-body);
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.plan-cap strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.plan-price {
+  margin-top: auto;
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 22px;
+  color: var(--brand-deep);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.plan-price-unit {
+  font-family: var(--sans);
+  font-size: 11px;
+  color: var(--ink-mute);
+  margin-top: 4px;
+}
+
+.plan-annual {
+  font-family: var(--sans);
+  font-size: 11px;
+  color: var(--ink-body);
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px dashed var(--rule);
+}
+
+.plan-annual strong {
+  color: var(--brand-bright);
+  font-weight: 700;
+}
+
+.plans-footnote {
+  font-family: var(--sans);
+  font-size: 10.5px;
+  color: var(--ink-mute);
+  font-style: italic;
+  margin: 10px 0 0;
+  line-height: 1.55;
+  padding-top: 8px;
+}
+
+.plans-footnote sup {
+  color: var(--brand-bright);
+  font-weight: 700;
+  font-style: normal;
+  margin-right: 2px;
+}
+
+/* ---------- Contact ---------- */
+
+.contact {
+  margin-top: 18px;
+  background: var(--paper-tint);
+  padding: 14px 18px;
+  border-radius: 6px;
+  display: grid;
+  grid-template-columns: 26px 1fr;
+  gap: 14px;
+  align-items: center;
+}
+
+.contact-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 5px;
+  background: var(--brand-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.contact-name {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 13.5px;
+  color: var(--brand-deep);
+  margin-bottom: 1px;
+}
+
+.contact-line {
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--ink-body);
+}
+
+/* ---------- Footer ---------- */
+
+.foot {
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--sans);
+  font-size: 10.5px;
+  color: var(--ink-mute);
+}
+
+.foot-url {
+  font-weight: 700;
+  color: var(--brand-deep);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 720px) {
+  body { padding: 16px 12px; }
+  .page { padding: 14mm 12mm; min-height: 0; }
+  .doc-title { font-size: 24px; }
+  .price-table { grid-template-columns: 1fr; }
+  .plans { grid-template-columns: 1fr 1fr; }
+  .plan-card { min-height: auto; }
+}
+
+@page { size: A4; margin: 0; }
+
+@media print {
+  body { background: #fff; padding: 0; }
+  .page {
+    box-shadow: none;
+    margin: 0;
+    width: 210mm;
+    min-height: 297mm;
+    padding: 18mm 20mm 16mm;
+  }
+}
+</style>
+
+<div class="page">
+  <div class="masthead">
+    <div class="brand">
+      <img class="brand-logo" src="logo.png" alt="GyanSaar">
+      <div class="brand-name">Gyan<span>Saar</span></div>
+    </div>
+    <div class="masthead-meta">
+      Pricing &middot; B2B<br>v0.3 &middot; Nov 2026
+    </div>
+  </div>
+
+  <h1 class="doc-title">Implementation &amp; Pricing &mdash; For Institutes</h1>
+  <p class="doc-subtitle">Coaching centres &middot; Colleges &middot; Training institutes</p>
+
+  <div class="section">
+    <h2 class="section-head">About GyanSaar</h2>
+    <p class="section-body">
+      GyanSaar is a classroom instrument for Indian coaching institutes and colleges. Trainers record each class with one tap; the system returns a transcript, a first-draft assignment, graded student submissions, and a 24&times;7 doubt-clearing bot on WhatsApp &mdash; all grounded in that specific class. GyanSaar partners with institutes to lift trainer productivity, improve student retention, and generate documented evidence of teaching, without replacing the classroom.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2 class="section-head">Platform Access</h2>
+    <p class="section-body">
+      Every GyanSaar institutional licence includes the trainer app, admin portal, and the full student side: WhatsApp doubt bot, weekly parent digest, and LMS access tied to the institute. GyanSaar analyses what the trainer taught &mdash; not the trainer themselves &mdash; and produces class-level and institution-level artefacts that help the institute understand coverage without scoring individuals.
+    </p>
+    <ul class="bullet-list">
+      <li><strong>Trainer app</strong> &mdash; one-tap recording, inline edit, approval and discard with no institutional trace</li>
+      <li><strong>Per-class artefacts</strong> &mdash; searchable transcript, formatted lesson record, first-draft assignment set</li>
+      <li><strong>Student LMS</strong> &mdash; access to approved lessons, practice sets, and graded submissions</li>
+      <li><strong>24&times;7 WhatsApp doubt bot</strong> &mdash; grounded in the student&rsquo;s own class, not a generic textbook</li>
+      <li><strong>Weekly parent digest</strong> &mdash; summary of what was taught, delivered on WhatsApp</li>
+      <li><strong>Admin portal</strong> &mdash; usage data, coverage dashboards, payment and roster management</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-head">Onboarding &amp; Success</h2>
+    <p class="section-body">
+      Every GyanSaar partnership includes a named Launch Partner who works with your Academic Head to onboard trainers, tune extraction prompts for your subjects, and keep usage healthy through the pilot and into steady state.
+    </p>
+    <ul class="bullet-list">
+      <li><strong>Trainer onboarding</strong> &mdash; 15 minutes per trainer, in person or over video; consent docs tailored to your institute (DPDP-aligned)</li>
+      <li><strong>Launch and Land workshops</strong> &mdash; two short sessions at the start of pilot to lock in the first recordings and set per-batch expectations</li>
+      <li><strong>Weekly check-ins</strong> &mdash; health of recordings, approval rates, student engagement, and bot quality</li>
+      <li><strong>Direct trainer support</strong> &mdash; a WhatsApp line for your trainers during the first month; shared issue tracker thereafter</li>
+      <li><strong>Impact review</strong> &mdash; monthly data read-out for the Academic Head covering institution-level coverage, retention proxies, and parent engagement</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-head">Pricing</h2>
+
+    <div class="price-block">
+      <div class="price-sub-head">Pilot</div>
+      <div class="price-table">
+        <div class="price-cell price-cell-head">PRICE</div>
+        <div class="price-cell price-cell-head">NOTES</div>
+        <div class="price-cell price-cell-price">
+          <div class="price-value">&#8377;5,000</div>
+          <div class="price-unit">per cohort &middot; 4 weeks</div>
+        </div>
+        <div class="price-cell price-cell-notes">
+          Institutes typically begin with a 4-week pilot. The Launch Partner facilitates two workshops &mdash; "Launch" and "Land" &mdash; with a cohort of 2&ndash;5 trainers, guiding them through recording, reviewing their data, and setting classroom goals. Pilot fee waived for the first two launch-cohort institutes.
+        </div>
+      </div>
+    </div>
+
+    <div class="price-block">
+      <div class="price-sub-head">Standard plans</div>
+      <div class="plans">
+        <div class="plan-card">
+          <div class="plan-eyebrow">STARTER</div>
+          <h3 class="plan-name">Starter</h3>
+          <div class="plan-cap">Up to <strong>50 students</strong><sup style="color: var(--brand-bright); font-weight: 700;">*</sup></div>
+          <div class="plan-price">&#8377;8,000</div>
+          <div class="plan-price-unit">per month</div>
+          <div class="plan-annual">Annual: <strong>&#8377;80,000</strong> &middot; save 2 months</div>
+        </div>
+        <div class="plan-card highlight">
+          <div class="plan-eyebrow">GROWTH</div>
+          <h3 class="plan-name">Growth</h3>
+          <div class="plan-cap">Up to <strong>150 students</strong><sup style="color: var(--brand-bright); font-weight: 700;">*</sup></div>
+          <div class="plan-price">&#8377;18,000</div>
+          <div class="plan-price-unit">per month</div>
+          <div class="plan-annual">Annual: <strong>&#8377;1,80,000</strong> &middot; save 2 months</div>
+        </div>
+        <div class="plan-card">
+          <div class="plan-eyebrow">SCALE</div>
+          <h3 class="plan-name">Scale</h3>
+          <div class="plan-cap">Up to <strong>500 students</strong><sup style="color: var(--brand-bright); font-weight: 700;">*</sup></div>
+          <div class="plan-price">&#8377;45,000</div>
+          <div class="plan-price-unit">per month</div>
+          <div class="plan-annual">Annual: <strong>&#8377;4,50,000</strong> &middot; save 2 months</div>
+        </div>
+        <div class="plan-card">
+          <div class="plan-eyebrow">ENTERPRISE</div>
+          <h3 class="plan-name">Enterprise</h3>
+          <div class="plan-cap">500+ students<br><strong>Custom</strong></div>
+          <div class="plan-price" style="font-size: 18px;">from &#8377;85,000</div>
+          <div class="plan-price-unit">per month, bespoke</div>
+          <div class="plan-annual">Annual commitment required</div>
+        </div>
+      </div>
+      <p class="plans-footnote">
+        <sup>*</sup> Each plan includes a monthly recording quota (Starter up to 40 hours, Growth up to 80 hours, Scale up to 150 hours). Additional recording is billed as a top-up at &#8377;300 per hour; alerts at 80 % and 100 % of quota, with a hard pause at 110 % so your invoice never carries a surprise. GST at 18 % is added to every invoice.
+      </p>
+    </div>
+
+    <div class="price-block">
+      <div class="price-sub-head">Setup</div>
+      <div class="price-table">
+        <div class="price-cell price-cell-head">PRICE</div>
+        <div class="price-cell price-cell-head">NOTES</div>
+        <div class="price-cell">
+          <div class="price-value">&#8377;10,000</div>
+          <div class="price-unit">one-time &middot; waived on annual</div>
+        </div>
+        <div class="price-cell">
+          Covers consent documentation tailored to your institute, trainer onboarding, app install and keystore trust, first-class dry run with your Academic Head, and the first week of extra support hours.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact">
+    <div class="contact-icon">&#9993;</div>
+    <div>
+      <div class="contact-name">Let&rsquo;s talk partnership &mdash; Deepak Nagpal</div>
+      <div class="contact-line">contact@gyansaar.com &nbsp;&middot;&nbsp; +91&nbsp;XXXXX&nbsp;XXXXX</div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span>Consent-first classroom instruments for Indian institutes.</span>
+    <span class="foot-url">gyansaar.com</span>
+  </div>
+</div>
